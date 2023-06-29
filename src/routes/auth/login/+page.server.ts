@@ -1,5 +1,5 @@
 import { AuthError } from '@supabase/supabase-js';
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 
 export const actions = {
 	default: async ({ request, locals: { supabase } }) => {
@@ -10,17 +10,15 @@ export const actions = {
 		const { error } = await supabase.auth.signInWithPassword({ email, password });
 
 		if (error instanceof AuthError) {
-			return fail(400, { message: 'Invalid credentials', success: false, email });
+			return fail(400, {
+				error: 'Invalid email or password'
+			});
 		} else if (error) {
-			return fail(500, { message: 'Server error. Try again later.', success: false, email });
+			return fail(400, {
+				error: 'Server error. Please try again later.'
+			});
 		}
 
-		return {
-			status: 200,
-			body: {
-				message: 'Login successful',
-				success: true
-			}
-		};
+		throw redirect(303, '/app');
 	}
 };

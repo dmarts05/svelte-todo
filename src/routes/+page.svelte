@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Navigation from '$lib/components/home/Navigation.svelte';
-	import Hero from '$lib/components/home/Hero.svelte';
+	import Nav from '$lib/components/HomeNav.svelte';
+	import Hero from '$lib/components/HomeHero.svelte';
 </script>
 
 <div class="flex flex-col h-screen">
-	<Navigation />
+	<Nav />
 	<Hero />
 </div>

@@ -15,12 +15,16 @@ export const actions = {
 		});
 
 		if (error) {
-			return fail(500, { message: 'Server error. Try again later.', success: false, email });
+			return fail(500, {
+				error: 'Server error. Please try again later.'
+			});
 		}
 
 		return {
-			message: 'Please check your email for a magic link to log into the website.',
-			success: true
+			status: 200,
+			body: {
+				message: 'Registration successful. Please check your email for the confirmation link.'
+			}
 		};
 	}
 };

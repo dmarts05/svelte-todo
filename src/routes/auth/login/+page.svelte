@@ -6,18 +6,12 @@
 <div class="flex flex-col justify-center items-center p-8 gap-8 h-screen">
 	<h2 class="font-bold text-4xl">Log in</h2>
 	<form method="post" use:enhance class="flex flex-col gap-4">
-		{#if form?.message}
-			<p class="text-primary-500">{form.message}</p>
+		{#if form?.error}
+			<p class="text-error-500">{form.error}</p>
 		{/if}
 		<label class="label">
 			<span>Email</span>
-			<input
-				type="email"
-				name="email"
-				value={form?.email ?? ''}
-				placeholder="Enter your email..."
-				class="input"
-			/>
+			<input type="email" name="email" placeholder="Enter your email..." class="input" />
 		</label>
 		<label class="label">
 			<span>Password</span>
