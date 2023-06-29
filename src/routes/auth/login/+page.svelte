@@ -11,11 +11,17 @@
 		{/if}
 		<label class="label">
 			<span>Email</span>
-			<input type="email" name="email" placeholder="Enter your email..." class="input" />
+			<input type="email" name="email" placeholder="Enter your email..." class="input" required />
 		</label>
 		<label class="label">
 			<span>Password</span>
-			<input type="password" name="password" placeholder="Enter your password..." class="input" />
+			<input
+				type="password"
+				name="password"
+				placeholder="Enter your password..."
+				class="input"
+				required
+			/>
 		</label>
 		<button type="submit" class="btn variant-filled-primary font-bold text-lg mt-4">Log in</button>
 	</form>
