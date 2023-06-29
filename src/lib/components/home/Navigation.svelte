@@ -9,10 +9,12 @@
 	</a>
 	<ul class="flex gap-4 items-center justify-between">
 		<li>
-			<a href="/login" class="text-xl font-bold">Login</a>
+			<a href="/auth/login" class="text-xl font-bold">Login</a>
 		</li>
 		<li>
-			<a href="/register" class="text-xl font-bold btn btn-sm variant-filled-primary">Register</a>
+			<a href="/auth/register" class="text-xl font-bold btn btn-sm variant-filled-primary"
+				>Register</a
+			>
 		</li>
 	</ul>
 </nav>
